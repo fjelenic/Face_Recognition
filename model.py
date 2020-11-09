@@ -40,13 +40,13 @@ test_data_generator = ImageDataGenerator(rescale=1. / 255)
 training_set = train_data_generator.flow_from_directory(train_path,
                                                  target_size=(224, 224),
                                                  batch_size=32,
-                                                 class_mode='binary',
+                                                 class_mode='categorical',
                                                  shuffle=True)
 
 test_set = test_data_generator.flow_from_directory(valid_path,
                                             target_size=(224, 224),
                                             batch_size=32,
-                                            class_mode='binary')
+                                            class_mode='categorical')
 
 
 r = model.fit_generator(
