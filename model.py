@@ -52,7 +52,7 @@ test_set = test_data_generator.flow_from_directory(valid_path,
 r = model.fit_generator(
     training_set,
     validation_data=test_set,
-    epochs=5,
+    epochs=4,
     steps_per_epoch=len(training_set),
     validation_steps=len(test_set)
 )
@@ -63,13 +63,6 @@ plt.plot(r.history['val_loss'], label='val loss')
 plt.legend()
 plt.show()
 plt.savefig('LossVal_loss')
-
-# accuracies
-plt.plot(r.history['acc'], label='train acc')
-plt.plot(r.history['val_acc'], label='val acc')
-plt.legend()
-plt.show()
-plt.savefig('AccVal_acc')
 
 
 model.save('model.h5')
