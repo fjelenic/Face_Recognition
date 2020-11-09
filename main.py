@@ -37,7 +37,7 @@ while True:
 
         name = "Not me"
 
-        if pred[0][3] > 0.5:
+        if pred[0][1] > 0.5:
             name = 'Me'
         cv2.putText(frame, name, (50, 50), cv2.FONT_HERSHEY_COMPLEX, 1, (0, 255, 0), 2)
     else:
